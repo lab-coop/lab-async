@@ -19,4 +19,12 @@ describe('lab async first', () => {
     expect(result).toEqual(undefined);
 
   });
+
+  it('should use arguments passed', async () => {
+    const taskA = async () => await Promise.resolve(null);
+    const taskB = async (a, b) => await Promise.resolve(a + b);
+
+    const result = await a.first([taskA, taskB], 40, 2);
+    expect(result).toEqual(42);
+  });
 });
