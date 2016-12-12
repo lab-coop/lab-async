@@ -10,4 +10,13 @@ describe('lab async first', () => {
     const result = await a.first([taskA, taskB, taskC]);
     expect(result).toEqual(true);
   });
+
+  it('should return with undefined in case of no valid result', async () => {
+    const taskA = async () => await Promise.resolve(null);
+    const taskB = async () => await Promise.resolve(null);
+
+    const result = await a.first([taskA, taskB]);
+    expect(result).toEqual(undefined);
+
+  });
 });
