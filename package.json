@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "compile": "rm index.* && babel ./src -d ./ --ignore node_modules,src/index.test.js",
+    "compile": "rm -f index.* && babel ./src -d ./ --ignore node_modules,src/index.test.js",
     "prepublish": "npm run compile"
   },
   "repository": {
