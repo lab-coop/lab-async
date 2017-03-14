@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "compile": "rm index.* && babel ./src -d ./ --ignore node_modules,src/index.test.js",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lab-coop/lab-async.git"
   },
   "jest": {
     "transform": {
